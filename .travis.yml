@@ -1,0 +1,23 @@
+language: c
+
+matrix:
+  include:
+    - env: TARGET=win WIN_TOOL=i686-w64-mingw32
+    - env: TARGET=win WIN_TOOL=x86_64-w64-mingw32
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - if [ $TRAVIS_OS_NAME == linux ]; then
+    if   [ "${WIN_TOOL}" == i686-w64-mingw32 ]; then
+      sudo apt-get install -y git mingw-w64 mingw-w64-tools gcc-mingw-w64-i686 automake autoconf libudev-dev libtool texinfo texlive
+    elif   [ "${WIN_TOOL}" == x86_64-w64-mingw32 ]; then
+      sudo apt-get install -y git mingw-w64 mingw-w64-tools gcc-mingw-w64-i686 automake autoconf libudev-dev libtool texinfo texlive
+    fi
+  fi
+  - make --version
+  - uname -a
+
+script:
+  - build.sh

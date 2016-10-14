@@ -29,16 +29,16 @@ then
 		LIBUSB0_LIBS="-L${PREFIX}/lib -lusb" \
 		LIBUSB1_LIBS="-L${PREFIX}/lib -lusb-1.0" \
 		HIDAPI_LIBS="-L${PREFIX}/lib ${HIDAPI_LDFLAGS}" \
-		--host=x86_64-w64-mingw32 \
-		--target=x86_64-w64-mingw32 --pdfdir=$PREFIX
+		--host=$HOST \
+		--target=$TARGET --pdfdir=$PREFIX
 else
 	CFLAGS="-w -O2 $CFLAGS" CXXFLAGS="-w -O2 $CXXFLAGS" LDFLAGS="$LDFLAGS" ../OpenOCD/configure \
 		--prefix=$PREFIX \
 		HIDAPI_CFLAGS=-I${PREFIX}/include/hidapi \
 		HIDAPI_LIBS="-L${PREFIX}/lib ${HIDAPI_LDFLAGS}" \
 		LIBFTDI_CFLAGS=-I${PREFIX}/include/libftdi1 \
-		--host=x86_64-w64-mingw32 \
-		--target=x86_64-w64-mingw32
+		--host=$HOST \
+		--target=$TARGET
 fi
 
 #if [ -z "$MAKE_JOBS" ]; then

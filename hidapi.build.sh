@@ -23,8 +23,8 @@ then
 	../hidapi/configure --prefix=$PREFIX \
 	libusb_CFLAGS="-I${PREFIX}/include/libusb-1.0" \
 	libusb_LIBS="-L${PREFIX}/lib -lusb-1.0" \
-	--host=x86_64-w64-mingw32 \
-	--target=x86_64-w64-mingw32
+	--host=$HOST \
+	--target=$TARGET
 else
 	../hidapi/configure --prefix=$PREFIX
 fi

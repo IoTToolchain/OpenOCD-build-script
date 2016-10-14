@@ -26,8 +26,8 @@ export LT_AGE=0
 	LIBUSB_1_0_CFLAGS=-I${PREFIX}/include/libusb-1.0 \
 	LIBUSB_1_0_LIBS="-L${PREFIX}/lib -lusb-1.0" \
 	--prefix=$PREFIX \
-	--host=x86_64-w64-mingw32 \
-	--target=x86_64-w64-mingw32
+	--host=$HOST \
+	--target=$TARGET
 
 #	--disable-shared \
 

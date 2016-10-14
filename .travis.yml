@@ -4,16 +4,16 @@ language: c
 
 matrix:
   include:
-    - env: TARGET=win WIN_TOOL=i686-w64-mingw32
-    - env: TARGET=win WIN_TOOL=x86_64-w64-mingw32
+    - env: HOST=i686-w64-mingw32 TARGET=i686-w64-mingw32 
+    - env: HOST=x86_64-w64-mingw32 TARGET=x86_64-w64-mingw32 
 
 before_install:
   - sudo apt-get -qq update
 
 install:
   - sudo apt-get install -y git mingw-w64 binutils-mingw-w64 automake autoconf libudev-dev libtool texinfo texlive;
-  - export CC=$WIN_TOOL-gcc
-  - export CXX=$WIN_TOOL-g++
+  - export CC=$HOST-gcc
+  - export CXX=$HOST-g++
   - "$CC -v"
   - "$CXX -v"
   - make --version

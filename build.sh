@@ -1,7 +1,5 @@
 #!/bin/bash -ex
 
-export TARGET="x86_64"
-
 if [ "$TARGET" == "i686" ] ;
 then
 	export CFLAGS="-m32 -O2 -mfpmath=sse -march=atom"

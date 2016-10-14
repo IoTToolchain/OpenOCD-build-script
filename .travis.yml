@@ -4,7 +4,7 @@ language: c
 
 matrix:
   include:
-    - env: HOST=i686-w64-mingw32 TARGET=i686-w64-mingw32 
+    - env: HOST=x86_64-w64-mingw32 TARGET=i686-w64-mingw32 
     - env: HOST=x86_64-w64-mingw32 TARGET=x86_64-w64-mingw32 
 
 before_install:

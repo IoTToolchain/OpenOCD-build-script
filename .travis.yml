@@ -20,4 +20,4 @@ install:
   - uname -a
 
 script:
-  - build.sh
+  - ./build.sh

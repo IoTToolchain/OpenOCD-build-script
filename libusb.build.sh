@@ -28,8 +28,6 @@ cd libusb-build
 
 #nice -n 10 make -j $MAKE_JOBS
 
-cat Makefile
-
 make
 
 make install

@@ -1,7 +1,23 @@
 #!/bin/bash -ex
 
-export CFLAGS="-m64 -O2"
-export CXXFLAGS="-m64 -O2"
+export TARGET="x86_64"
+
+if [ "$TARGET" == "i686" ] ;
+then
+	export CFLAGS="-m32 -O2 -mfpmath=sse -march=atom"
+	export CXXFLAGS=$CFLAGS
+elif [ "$TARGET" == "x86_64" ] ;
+then
+	export CFLAGS="-m64 -O2 -mfpmath=sse -march=atom"
+	export CXXFLAGS=$CFLAGS
+else
+	exit 1
+fi
+
+export HOST=$TARGET-w64-mingw32
+export CC=$HOST-gcc
+export CXX=$HOST-g++
+
 export HIDAPI_LDFLAGS="-lhidapi"
 
 ./clean.sh

@@ -27,16 +27,8 @@ export LT_AGE=0
 	LIBUSB_1_0_LIBS="-L${PREFIX}/lib -lusb-1.0" \
 	--prefix=$PREFIX \
 	--host=$HOST \
-	--target=$TARGET
-
+	--target=$HOST
 #	--disable-shared \
 
-#if [ -z "$MAKE_JOBS" ]; then
-#	MAKE_JOBS="4"
-#fi
-
-#nice -n 10 make -j $MAKE_JOBS
-
 make
-
 make install

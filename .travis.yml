@@ -12,9 +12,10 @@ before_install:
 
 install:
   - sudo apt-get install -y git mingw-w64 binutils-mingw-w64 automake autoconf libudev-dev libtool texinfo texlive;
-  - $HOST-w64-mingw32-gcc -v
-  - export CC=$HOST-w64-mingw32-gcc
-  - export CXX=$HOST-w64-mingw32-g++
+  - export CC=$WIN_TOOL-gcc
+  - export CXX=$WIN_TOOL-g++
+  - "$CC -v"
+  - "$CXX -v"
   - make --version
   - uname -a
 

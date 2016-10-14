@@ -19,5 +19,8 @@ install:
   - make --version
   - uname -a
 
+before_script:
+  - chmod +x build.sh clean.sh hidapi.build.sh libusb-compat-0.1.build.sh libusb.build.sh openocd.build.sh
+
 script:
   - ./build.sh

@@ -11,9 +11,9 @@ before_install:
 install:
   - if [ $TRAVIS_OS_NAME == linux ]; then
       if   [ "${WIN_TOOL}" == i686-w64-mingw32 ]; then
-        sudo apt-get install -y git mingw-w64 mingw-w64-tools mingw-w64-common gcc-mingw-w64-i686 g++-mingw-w64-i686 mingw-w64-i686-dev binutils-mingw-w64-i686 automake autoconf libudev-dev libtool texinfo texlive;
+        sudo apt-get install -y git mingw-w64 mingw-w64-tools mingw-w64-common gcc-mingw-w64-i686 g++-mingw-w64-i686 binutils-mingw-w64-i686 automake autoconf libudev-dev libtool texinfo texlive;
       elif [ "${WIN_TOOL}" == x86_64-w64-mingw32 ]; then
-        sudo apt-get install -y git mingw-w64 mingw-w64-tools mingw-w64-common gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 mingw-w64-x86-64-dev binutils-mingw-w64-x86-64 automake autoconf libudev-dev libtool texinfo texlive;
+        sudo apt-get install -y git mingw-w64 mingw-w64-tools mingw-w64-common gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 binutils-mingw-w64-x86-64 automake autoconf libudev-dev libtool texinfo texlive;
       fi
     fi
   - make --version
